@@ -14,8 +14,7 @@ let avaliableKeyWords = [
     'Scala',
 ];
 
-const resultbox = document.querySelector(".result-box")
-;
+const resultbox = document.querySelectorAll(".result-box")
 const inputBox = document.getElementById("input-box");
 
 
@@ -24,9 +23,17 @@ inputBox.onkeyup = function(){
     let input = inputBox.value;
     if(input.length){
         result = avaliableKeyWords.filter((keyword)=>{
-            keyword.toLowerCase().includes(input.toLowerCase)
+          return  keyword.toLowerCase().includes(input.toLowerCase())
         });
         console.log(result);
 
     }
+    display(result)
+  }
+    function display(result){
+        const content = result.map((list)=>{
+            return "<li>"+  list+ "</li>";
+        })
+        resultbox.innerHTML = "<ul>" + content  +"</ul>";
+  
 }
