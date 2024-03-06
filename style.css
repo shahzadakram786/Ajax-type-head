@@ -64,3 +64,8 @@ button .fa-solid{ width: 25px;
 .result-box ul li:hover{
   background: orange;
 }
+
+/* .result-box {
+    max-height: 300px;
+    overflow-y: scroll;
+} */
